@@ -1,0 +1,191 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Administrator</title>		
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="icon" href="/logo.png">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="layout.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="setting.js"></script>
+	
+	</head>
+	<body>
+		
+        <div class="container">			
+			<div id="acount" style="display: none;"><%=user%></div>
+			
+			<div id="header">
+				<p id="head" class="head">Setting: <%=user%></p>
+				<a class="logout" href="/logout"><i class="fa fa fa-sign-out"></i></a>				
+			</div>	
+
+			<div id="settingForm">
+					<div id="adminlist">
+						<button  class="adminbtn" onclick="document.getElementById('id01').style.display='block'"><img src="acount.png" style="height: 30px;"></button>	
+						<label class="lb">Add/Remove User</label>			
+					</div>		
+					<div id="adminlist">
+						<button  class="adminbtn" onclick="document.getElementById('id02').style.display='block'"><img src="device.png" style="height: 30px;"></button>		
+						<label class="lb">Add/Remove Device</label>			
+					</div>	
+					<div id="adminlist">
+						<button  class="adminbtn" onclick="document.getElementById('id03').style.display='block'"><img src="ota.png" style="height: 30px;"></button>
+						<label class="lb">Edit OTA</label>			
+					</div>	
+					
+					
+					<div id="id01" class="modal">
+							
+						<div class="modal-content animate">
+											
+								<div id="nametab" >Add/Remove User</div>
+
+								<div class="row">
+									<div class="col-25"><label for="usr">Username</label></div>	
+									<div class="col-75">
+									<input type="text" id="usr" class="info" name="usr" placeholder="Username">
+									</div>
+								</div>
+	
+								<div class="row">
+									<div class="col-25"><label for="pwd">Password</label></div>
+									<div class="col-75">
+									<input type="text" id="pwd" class="info" name="pwd" placeholder="Password">
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-25"><label for="mail">Mail</label></div>
+									<div class="col-75">
+									<input type="email" id="mail" class="info" name="mail" placeholder="Mail">
+									</div>
+								</div>
+								
+	
+								<div class="row">
+									<button id="add" onclick="add_usr()" >ADD</button>
+								</div>
+
+								<div class="row">
+									<button id="remove" onclick="remove_usr()" >REMOVE</button>
+								</div>
+
+								<div class="row">
+									<button type="button" onclick="document.getElementById('id01').style.display='none'" id="cancelbtn">Cancel</button>
+								</div>
+						</div>
+					</div>
+
+					<div id="id02" class="modal">
+							
+						<div class="modal-content animate">
+											
+								<div id="nametab" >Add/Remove Device</div>
+
+								<div class="row">
+									<div class="col-25"><label for="device">Device</label></div>
+									<div class="col-75">
+									<input type="text" id="device" class="info" name="device" placeholder="Device">
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-25"><label for="serial">Serial</label></div>	
+									<div class="col-75">
+									<input type="text" id="serial" class="info" name="serial" placeholder="Serial number">
+									</div>
+								</div>
+
+								
+								<div class="row">
+									<div class="col-25"><label for="btn">Button</label></div>
+									<div class="col-75">
+										<select id="btn" class="choose" name="btn">
+											<option value=2>2 Buttons</option>
+											<option value=4>4 Buttons</option>
+										</select>
+									</div>
+								</div>
+	
+								<div class="row">
+									<button id="add" onclick="add_device()" >ADD</button>
+								</div>
+
+								<div class="row">
+									<button id="remove" onclick="remove_device()" >REMOVE</button>
+								</div>
+
+								<div class="row">
+									<button type="button" onclick="document.getElementById('id02').style.display='none'" id="cancelbtn">Cancel</button>
+								</div>
+						</div>
+					</div>
+
+					<div id="id03" class="modal">
+							
+						<div class="modal-content animate">
+											
+								<div id="nametab" >Edit OTA</div>
+
+								<div class="row">
+									<div class="col-25"><label for="ota">OTA</label></div>	
+									<div class="col-75">
+									<input type="text" id="ota" class="info" name="ota" placeholder="OTA name">
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-25"><label for="type">Button</label></div>
+									<div class="col-75">
+										<select id="type" class="choose" name="type">
+											<option value="version">version</option>
+											<option value="file">file</option>
+										</select>
+									</div>
+								</div>
+	
+								<div class="row">
+									<div class="col-25"><label for="tata">Data</label></div>
+									<div class="col-75">
+									<input type="text" id="data" class="info" name="data" placeholder="Data">
+									</div>
+								</div>
+								
+								<div class="row">
+									<button id="edit" onclick="edit()" >Edit</button>
+								</div>
+
+								<div class="row">
+									<button type="button" onclick="document.getElementById('id03').style.display='none'" id="cancelbtn">Cancel</button>
+								</div>
+						</div>
+					</div>
+
+
+			</div>
+            <div class="icon-bar">
+				<p id="home"  ><a href="/"><i class="fa fa-home"></i></a></p> 
+				<p id="setting"><a href="/setting"  ><i class="fa fa-wrench"  style="background-color: teal;"></i></a></p>	
+			</div>
+
+		</div>
+		<script>
+			var modal = document.getElementById('id01');
+			var modal2 = document.getElementById('id02');
+			var modal3 = document.getElementById('id03');		
+			window.onclick = function(event) {
+				if (event.target == modal) {modal.style.display = "none";}
+				if (event.target == modal2) {modal2.style.display = "none";}
+				if (event.target == modal3) {modal3.style.display = "none";}
+			}
+		</script>
+
+	</body>
+</html>

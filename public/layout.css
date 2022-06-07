@@ -1,0 +1,117 @@
+body{background-color: white;}
+ 
+.container{width: 100%; margin: auto;}
+
+/* Trang đăng nhập */
+.loginForm{margin-top: calc(100vh/2 - 200px); text-align: center; }
+.input-container { display: -ms-flexbox; /* IE10 */ display: flex; width: 80%; margin: auto;  margin-bottom: 15px;} 
+.input-container a {border-bottom-left-radius: 20px; border-top-left-radius: 20px; background-color: teal; color: white;min-width: 50px;text-align: center; height: 40px; line-height: 40px; font-size: 20px;}  
+.input-field {border-bottom-right-radius: 20px; border-top-right-radius: 20px; width: 100%; padding: 10px; height: 40px; outline: none;}
+.input-field:focus {border: 2px solid dodgerblue;}
+.btn {border-radius: 20px; background-color: teal; color: white; cursor: pointer; width: 80%; height: 40px; padding-top: 10px; opacity: 0.9;}
+.btn:hover {opacity: 1; }
+.footer{position: fixed; left:0; bottom: 0; text-align: center; width: 100%; height: 60px; line-height: 60px;  overflow: auto; background-color: teal; color: white;}
+
+/* Trang HOME */
+#registation{border-radius: 10px; background-color: whitesmoke; width: 90%; margin: auto; margin-bottom: 20px; padding: 20px; border: 1px solid steelblue; transition: top 0.3s; -webkit-animation: animatezoom 1s; animation: animatezoom 1s;}
+#controllerlist{border-radius: 10px; background-color: whitesmoke; width: 90%; margin: auto; margin-bottom: 20px;padding: 20px; border: 1px solid steelblue; transition: top 0.3s;-webkit-animation: animatezoom 1s; animation: animatezoom 1s;}
+#update{border-radius: 10px; background-color: whitesmoke; width: 90%; margin: auto; padding: 20px; margin-bottom: 20px;border: 1px solid steelblue; transition: top 0.3s; -webkit-animation: animatezoom 1s; animation: animatezoom 1s;}
+
+/* Trang SETTING */
+#header{position:fixed; z-index: 1; left:0;  padding-left: 10px; padding-right: 10px; width: 100%; height: 50px;   line-height:50px; background-color: teal;  font-weight: bold;  top:0; transition: top 0.3s;}
+.head{font-size:20px; color: whitesmoke;}
+.logout{position:absolute; right:10px; top: 5px; border-radius: 20px; width: 40px; height: 40px; line-height: 40px; text-align: center; background-color: white;}
+
+#userForm, #settingForm{width: 100%; padding: 20px; margin: auto; margin-top: 80px; margin-bottom: 80px; font-weight: bold;}
+#adminlist{border-radius: 15px; padding: 10px; border:1px solid teal; font-weight: bold; width:95%; margin: auto; margin-bottom: 20px; -webkit-animation: animatezoom 1s; animation: animatezoom 1s; }
+.adminbtn {border-radius: 40px;  background-color: whitesmoke; color: white; cursor: pointer; outline: none; height: 60px; width: 60px; opacity: 0.9;}
+.lb{margin-left: 30px; color: teal;}
+
+.modal {display: none;position: fixed;z-index: 1;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);padding-top: 60px;}
+.modal-content {background-color: #fefefe;margin: 5px auto; border: 1px solid #888;width: 90%;padding: 20px;}
+.animate {-webkit-animation: animatezoom 0.6s;animation: animatezoom 0.6s}
+
+.row{width: 90%; margin: auto; margin-top: 15px; }
+.col-25 {width: 100%;}
+.col-75 {width: 100%;}
+label {padding: 5px 5px 5px 0;display: inline-block;}
+
+#nametab{width: 100%; text-align: center; color: teal; font-size: 20px; font-weight: bold;}
+.info{ width: 100%;padding: 10px;border-radius: 20px; border: 1px solid black;box-sizing: border-box;resize: vertical;}
+.choose{-webkit-appearance: textfield;-moz-appearance: textfield;min-height: 40px; min-width: 100%; padding: 10px; border-radius: 20px;   border: 1px solid black;}
+#add, #remove, #edit{margin-top: 20px;  width: 100%; background-color: teal; color: white;padding: 12px 20px;border: none;border-radius: 4px;cursor: pointer;float: right;}
+#cancelbtn{margin-top: 20px; width: 100%; background-color: teal; color: white;padding: 12px 20px;border: none;border-radius: 4px;cursor: pointer;}
+
+    /* menu tab */
+    .icon-bar {position: fixed; left:0; bottom: 0; width: 100%; height: 60px;   overflow: auto;}
+    .icon-bar p { float: left;  width: 50%;  margin-top: 10px; text-align: center; transition: all 0.3s ease;color: white;font-size: 20px;}
+    .icon-bar a {color: white;}
+    .icon-bar i {width: 40px; height: 40px;   line-height: 40px; border-radius: 25px; background-color: #575244;}
+    .icon-bar i:hover{background-image: url(theme_4.jpg);}
+
+@media (min-width: 600px) {
+    /* Trang đăng nhập */
+    .loginForm{text-align: center;}
+    .input-container { display: -ms-flexbox; /* IE10 */ display: flex; width: 450px; margin: auto;  margin-bottom: 15px;} 
+    .input-container a {border-bottom-left-radius: 20px; border-top-left-radius: 20px; background-color: teal; color: white;min-width: 50px;text-align: center; height: 40px; line-height: 40px; font-size: 20px;}  
+    .input-field {border-bottom-right-radius: 20px; border-top-right-radius: 20px; width: 100%; padding: 10px; height: 40px; outline: none;}
+    .input-field:focus {border: 2px solid dodgerblue;}
+    .btn {border-radius: 20px; background-color: teal; color: white; cursor: pointer; width: 450px; height: 40px; padding-top: 10px; opacity: 0.9;}
+    .btn:hover {opacity: 1; }
+    
+    
+    /* Trang HOME */
+    #registation{border-radius: 10px; background-color: whitesmoke; width: 400px; margin: auto; margin-bottom: 20px; padding: 20px; border: 1px solid steelblue; transition: top 0.3s; -webkit-animation: animatezoom 1s; animation: animatezoom 1s;}
+    #controllerlist{border-radius: 10px; background-color: whitesmoke; width: 400px; margin: auto; margin-bottom: 20px;padding: 20px; border: 1px solid steelblue; transition: top 0.3s;-webkit-animation: animatezoom 1s; animation: animatezoom 1s;}
+    #update{border-radius: 10px; background-color: whitesmoke; width: 400px; margin: auto; padding: 20px; margin-bottom: 20px;border: 1px solid steelblue; transition: top 0.3s; -webkit-animation: animatezoom 1s; animation: animatezoom 1s;}
+
+
+     /* Trang SETTING */
+    #header{position:fixed; left:0; z-index: 1; padding-left: 10px; padding-right: 10px; width: 100%; height: 50px;   line-height:50px; background-color: teal;  font-weight: bold;  top:0; transition: top 0.3s;}
+    .head{font-size:20px; color: whitesmoke;}
+    .logout{position:absolute; right:10px; top: 5px; border-radius: 20px; width: 40px; height: 40px; line-height: 40px; text-align: center; background-color: white;}
+    
+    #userForm, #settingForm{width: 100%; padding: 20px; margin: auto; margin-top: 80px; margin-bottom: 80px; font-weight: bold;}
+    #adminlist{border-radius: 15px; padding: 10px;  border:1px solid teal; font-weight: bold; width:400px; margin: auto; margin-bottom: 20px; -webkit-animation: animatezoom 1s; animation: animatezoom 1s; }
+    .adminbtn {border-radius: 40px; background-color: whitesmoke; color: white; cursor: pointer; outline: none; width: 60px; height: 60px; opacity: 0.9;}
+    .lb{margin-left: 30px; color: teal;}
+
+
+    .modal {display: none;position: fixed;z-index: 1;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);padding-top: 60px;}
+    .modal-content {background-color: #fefefe;margin: 5px auto; border: 1px solid #888;width: 500px;padding: 20px;}
+    .animate {-webkit-animation: animatezoom 0.6s;animation: animatezoom 0.6s}
+
+    .row{width: 90%; margin: auto; margin-top: 15px; }
+    .col-25 {width: 100%;}
+    .col-75 {width: 100%;}
+    label {padding: 5px 5px 5px 0;display: inline-block;}
+
+    #nametab{width: 100%; text-align: center; color: teal; font-size: 20px; font-weight: bold;}
+    .info{ width: 100%;padding: 10px;border-radius: 20px; border: 1px solid black;box-sizing: border-box;resize: vertical;}
+    .choose{-webkit-appearance: textfield;-moz-appearance: textfield;min-height: 40px; min-width: 100%; padding: 10px; border-radius: 20px;   border: 1px solid black;}
+    #add, #remove, #edit{margin-top: 20px;  width: 100%; background-color: teal; color: white;padding: 12px 20px;border: none;border-radius: 4px;cursor: pointer;float: right;}
+    #cancelbtn{margin-top: 20px; width: 100%; background-color: teal; color: white;padding: 12px 20px;border: none;border-radius: 4px;cursor: pointer;}
+
+
+
+  /* menu tab */
+.icon-bar {position: fixed; left: 0;  padding-left: calc(50% - 240px); bottom: 0; width: 100%; height: 60px;   overflow: auto;}
+.icon-bar p { float: left; width: 240px; margin-top: 10px; text-align: center; transition: all 0.3s ease;color: white;font-size: 20px;}
+.icon-bar a {color: white;}
+.icon-bar i:hover{background-color: teal;}
+.icon-bar i {width: 40px; height: 40px; line-height: 40px; border-radius: 25px; }
+
+
+}
+
+
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+  }
+  
+  @keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+  }
